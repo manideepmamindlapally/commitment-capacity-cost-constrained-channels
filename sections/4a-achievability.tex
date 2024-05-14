@@ -1,0 +1,19 @@
+We present a commitment protocol $\cP$ that achieves a throughput as much as the capacity expression while also satisfying all the security guanrantees. 
+We construct a deterministic binned codebook $\cC$ using the random coding argument with expurgation.
+Our protocol $\cP$ uses the codebook $\cC$ and employs a stochastic strategy by Alice and has a throughput as much as the capacity expression while also satisfying \emph{soundness}, \emph{concealment}, and \emph{binding}.
+
+\subsection{Bindingness}
+
+\begin{lemma}
+    \label{lem:binding}
+    Let $P_X \in \cP(\cX)$ be a distribution that satisfies the cost constraint $\mathbb{E}_{P_X}[\rho_X(X)]\leq \Gamma$ and let $W_{Y|X} \in \cP(\cY|\cX)$ be a non-redundant channel. 
+    For all $\bx, \bx' \in \cT^{(n)}_{P_X, \e}$ such that $d_H(\bx,\bx') \geq \s n$, we have
+    \begin{equation}
+        \Prob _{\bY \sim W_{\bx'}^{(n)}} \insquare{ \bY \in \cT^{(n)}_{\e} (W_{\bx}) } 
+        \leq 2 \abs{\cX} \abs{\cY} \exp \inparen{-\frac{n \s^2 \e}{2 \abs{\cX}}}
+    \end{equation} 
+\end{lemma}
+
+\begin{proof}
+    
+\end{proof}
