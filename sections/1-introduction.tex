@@ -39,5 +39,10 @@ Let $X\sim \text{Bernoulli}(p)$ denote a Bernoulli random variable $X$ with para
 Given $P_X,Q_X \in \cP(\cX)$, let $D(P_X||Q_X)$ denote the KL divergence between $P_X$ and $Q_{X}$ and let $\norm{P_{X}-Q_X}_1$ denote the $\ell_1$ distance between $P_X$ and $Q_{X}$.
 %
 \\
-Given $P_X$ and $\delta>0$, let $\cT^{(n)}_{\delta}(P_X)=\{\bx: \left|T_{\bx}(x)-P_{X}(x)\right|\leq \delta, \ \forall x \in \mathcal{X}\}$ denote the set of typical $\bx$-sequences, where $T_{\bx}$ denotes the type of a sequence $\bx\in\cX^n$.  
+Let $N(a,\bx) := \sum_{i\in[n]} \mathbf{1}_{x_i = a}$ denote the number of times symbol $a$ appears in sequence $\bx$. 
+Let $N(a,b|\bx,\by) := \sum_{i\in[n]} \mathbf{1}_{x_i = a} \mathbf{1}_{y_i = b}$ denote the number of times symbols $a$ and $b$ appear simultaneously in sequences $\bx$ and $\by$.
+\\
+The type $T_{\bx}$ of a sequence $\bx\in\cX^n$ is the empirical distribution of $\bx$ and is defined as $T_{\bx} = \frac{1}{n} \sum_{i\in[n]} \delta_{x_i}$, where $\delta_{x_i}$ denotes the Dirac delta function at $x_i$.
+\\
+Given $P_X$ and $\delta>0$, let $\cT^{(n)}_{\delta}(P_X)=\{\bx: \left|T_{\bx}(x)-P_{X}(x)\right|\leq \delta, \ \forall x \in \mathcal{X}\}$ denote the set of typical $\bx$-sequences.
 %

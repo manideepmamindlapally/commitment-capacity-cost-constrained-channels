@@ -1,6 +1,6 @@
-We present a commitment protocol $\cP$ that achieves a throughput as much as the capacity expression while also satisfying all the security guanrantees. 
+We present a commitment protocol $\sP$ that achieves a throughput as much as the capacity expression while also satisfying all the security guanrantees. 
 We construct a deterministic binned codebook $\cC$ using the random coding argument with expurgation.
-Our protocol $\cP$ uses the codebook $\cC$ and employs a stochastic strategy by Alice and has a throughput as much as the capacity expression while also satisfying \emph{soundness}, \emph{concealment}, and \emph{binding}.
+Our protocol $\sP$ uses the codebook $\cC$ and employs a stochastic strategy by Alice and has a throughput as much as the capacity expression while also satisfying \emph{soundness}, \emph{concealment}, and \emph{binding}.
 
 \subsection{Bindingness}
 
@@ -15,5 +15,25 @@ Our protocol $\cP$ uses the codebook $\cC$ and employs a stochastic strategy by 
 \end{lemma}
 
 \begin{proof}
-    
+\begin{align}
+    &\Prob _{\bY \sim W_{\bx'}^{(n)}} \insquare{ \bY \in \cT^{(n)}_{\e} (W_{\bx}) } 
+    \\
+    &= \Prob _{\bY \sim W_{\bx'}^{(n)}} \insquare{ 
+        \forall c \in \cX, d \in \cY \quad 
+        \abs{ \frac{N(c,d|\bx, \bY)}{n} - W_{Y|X}(d|c) } \leq \e
+    }
+    \\
+    &\leq \Prob _{\bY \sim W_{\bx'}^{(n)}} \insquare{ 
+        \abs{ N(a,b | \bx, \bY) - nW_{Y|X}(b|a) } \leq n \e
+    }
+    \intertext{for a particular $a \in \cX$ and $b \in \cY$. Define $\sI_a := \setdef{k}{x_k = a}$ as the set of indices where $a$ appears in $\bx$. Also define $n_a := \abs{\sI_a}$.} 
+    &\leq 
+    \Prob _{\bY \sim W_{\bx'}^{(n)}} \insquare{
+        \abs { N(a,b | \bY, \bX) - n W_{Y|X}(b|a) } \leq n \e \bigg| \bY_{\sI_a} \in \cT^{(n_a)}_{\e} (W_{\bx'_{\sI_a}})
+    }
+    \nonumber \\
+    &\hspace{7cm} + 
+    \Prob _{\bY \sim W_{\bx'}^{(n)}} \insquare{ \bY_{\sI_a} \notin \cT^{(n_a)}_{\e} (W_{\bx'_{\sI_a}}) }
+\end{align}
+\Mani{To do: Define Conditional typical sets and edit the above proof.}
 \end{proof}
